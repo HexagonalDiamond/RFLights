@@ -35,7 +35,7 @@ dependencies {
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-    compile files("eclipse/mods/CoFHCore-[1.7.10]3.0.0RC7-215-dev.jar")
+    compile files("eclipse/mods/CoFHCore-[1.7.10]3.0.0RC7-211-dev.jar")
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

@@ -2,6 +2,7 @@ package com.julianscode.rflights.items;
 
 import com.julianscode.rflights.block.BlockLight;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 
 /**
@@ -10,5 +11,7 @@ import net.minecraft.item.ItemBlock;
 public class ItemBlockLight extends ItemBlock {
     public ItemBlockLight(Block block) {
         super(block);
+        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setUnlocalizedName("rfLight");
     }
 }
