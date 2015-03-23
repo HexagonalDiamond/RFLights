@@ -26,22 +26,6 @@ minecraft {
 }
 
 repositories {
-    ivy {
-        name "CoFHCore"
-        artifactPattern 'http://addons-origin.cursecdn.com/files/2230/988/[module]-[revision].[ext]'
-    }
-    ivy {
-        name "ThermalExpansion"
-        artifactPattern "http://addons.cursecdn.com/files/2230/996/[module]-[revision].[ext]"
-    }
-    ivy {
-        name "ThermalFoundation"
-        artifactPattern "http://addons.cursecdn.com/files/2230/632/[module]-[revision].[ext]"
-    }
-    ivy {
-        name "ThermalDynamics"
-        artifactPattern "http://addons.cursecdn.com/files/2230/634/[module]-[revision].[ext]"
-    }
     maven {
         name = "chickenbones"
         url = 'http://chickenbones.net/maven/'
@@ -53,15 +37,12 @@ repositories {
 }
 
 dependencies {
-    compile group: 'cofh', name: 'CoFHCore', version: cofhCoreVersion, ext: 'jar'
-    compile group: 'cofh', name: 'ThermalExpansion', version: teVersion, ext: 'jar'
-    compile group: 'cofh', name: 'ThermalFoundation', version: tFoundationVersion, ext: 'jar'
-    compile group: 'cofh', name: 'ThermalDynamics', version: tDynamicsVersion, ext: 'jar'
-
     compile codeChickenCoreVersion
     compile notEnoughItemsVersion
     compile codeChickenLibVersion
     compile wailaVersion
+    
+    compile files("lib/CoFHCore-[1.7.10]3.0.0RC4-204-dev.jar")
 }
 processResources
 {
