@@ -40,3 +40,4 @@ options.txt
 /out
 asm/
 usernamecache.json
+crash-reports/
