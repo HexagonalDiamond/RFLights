@@ -4,10 +4,8 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.julianscode.rflights.block.BlockLight;
-import com.julianscode.rflights.block.BlockLightBeam;
 import com.julianscode.rflights.items.ItemBlockLight;
 import com.julianscode.rflights.tileentities.TileEntityLight;
-import com.julianscode.rflights.tileentities.TileEntityLightBeam;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.Mod;
@@ -24,7 +22,6 @@ public class RFLights
     public static final String TEXTURE_NAME_PREFIX = "rflights:";
 
     public BlockLight blockLight;
-    public BlockLightBeam blockLightBeam;
     
     public int tier1rfpt;
     public int tier2rfpt;
@@ -48,7 +45,6 @@ public class RFLights
     public void init(FMLInitializationEvent event)
     {
         registerLights();
-        registerLightBeam();
         registerTileEntities();
     }
 
@@ -65,13 +61,6 @@ public class RFLights
     	tier3light = config.getInt("Tier 3", "Light Values", 15, 0, 15, "");
     	config.save();
     }
-    
-    private void registerLightBeam() {
-    	if(blockLightBeam == null) {
-    		blockLightBeam = new BlockLightBeam();
-    		GameRegistry.registerBlock(blockLightBeam, "RFLightBeamBlock");
-    	}
-     }
      
     private void registerLights() {
     	if(blockLight == null) {
@@ -86,6 +75,5 @@ public class RFLights
 
     private void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntityLight.class, "RFLight");
-        GameRegistry.registerTileEntity(TileEntityLightBeam.class, "RFLightBeam");
     }
 }
