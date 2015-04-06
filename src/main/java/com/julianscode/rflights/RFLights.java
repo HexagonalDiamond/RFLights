@@ -7,6 +7,7 @@ import com.julianscode.rflights.block.BlockLight;
 import com.julianscode.rflights.block.BlockLightBeam;
 import com.julianscode.rflights.items.ItemBlockLight;
 import com.julianscode.rflights.tileentities.TileEntityLight;
+import com.julianscode.rflights.tileentities.TileEntityLightBeam;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.Mod;
@@ -59,7 +60,7 @@ public class RFLights
     	tier2rfpt = config.getInt("Tier 2", "RF Per Tick", 100, 0, 1000000, "");
     	tier3rfpt = config.getInt("Tier 3", "RF Per Tick", 200, 0, 1000000, "");
     	
-    	tier1light = config.getInt("Tier 1", "Light Values", 15, 0, 15, "");
+    	tier1light = config.getInt("Tier 1", "Light Values", 20, 0, 20, "");
     	tier2light = config.getInt("Tier 2", "Light Values", 15, 0, 15, "");
     	tier3light = config.getInt("Tier 3", "Light Values", 15, 0, 15, "");
     	config.save();
@@ -85,5 +86,6 @@ public class RFLights
 
     private void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntityLight.class, "RFLight");
+        GameRegistry.registerTileEntity(TileEntityLightBeam.class, "RFLightBeam");
     }
 }

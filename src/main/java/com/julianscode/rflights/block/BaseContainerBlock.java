@@ -2,7 +2,6 @@ package com.julianscode.rflights.block;
 
 import com.julianscode.rflights.render.BaseIRenderType;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;

@@ -1,7 +1,6 @@
 package com.julianscode.rflights.block;
 
 import com.julianscode.rflights.RFLights;
-import com.julianscode.rflights.RFLightsLog;
 import com.julianscode.rflights.tileentities.TileEntityLight;
 
 import cpw.mods.fml.relauncher.Side;
@@ -11,16 +10,13 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Julian on 3/22/2015.
@@ -91,13 +87,19 @@ public class BlockLight extends Block implements ITileEntityProvider {
       if(block != null && block != this) {
         return block.getLightValue(world, x, y, z);
       }
-      return lightLevels[world.getBlockMetadata(x, y, z)];
+      
+      int meta = world.getBlockMetadata(x, y, z);
+      if(lightLevels[meta] >= 15) {
+    	  return 15;
+      } else {
+    	  return lightLevels[meta];
+      }
     }
     
     @Override
     public void breakBlock(World w, int x, int y, int z, Block b, int meta) {
     	TileEntityLight tel = (TileEntityLight) w.getTileEntity(x, y, z);
-    	tel.breakBlock();
+    	tel.breakBlock(w, x, y, z, meta);
     }
     
     @Override
